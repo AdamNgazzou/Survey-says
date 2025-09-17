@@ -1,0 +1,193 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color scheme for vibrant game show aesthetic */
+  --background: oklch(0.98 0.005 240); /* #f8fafc - Light blue-tinted background */
+  --foreground: oklch(0.25 0.015 240); /* #1f2937 - Dark gray text */
+  --card: oklch(1 0 0); /* #ffffff - Pure white cards */
+  --card-foreground: oklch(0.25 0.015 240); /* #1f2937 - Dark text on cards */
+  --popover: oklch(1 0 0); /* #ffffff - White popover backgrounds */
+  --popover-foreground: oklch(0.25 0.015 240); /* #1f2937 - Dark popover text */
+  --primary: oklch(0.55 0.25 260); /* #6366f1 - Vibrant indigo primary */
+  --primary-foreground: oklch(1 0 0); /* #ffffff - White text on primary */
+  --secondary: oklch(0.55 0.22 25); /* #dc2626 - Bold red secondary */
+  --secondary-foreground: oklch(1 0 0); /* #ffffff - White text on secondary */
+  --muted: oklch(0.96 0.005 240); /* #f1f5f9 - Subtle muted backgrounds */
+  --muted-foreground: oklch(0.45 0.015 240); /* #64748b - Muted text */
+  --accent: oklch(0.55 0.22 25); /* #dc2626 - Red accent matching secondary */
+  --accent-foreground: oklch(1 0 0); /* #ffffff - White text on accent */
+  --destructive: oklch(0.55 0.22 25); /* #dc2626 - Red for destructive actions */
+  --destructive-foreground: oklch(1 0 0); /* #ffffff - White text on destructive */
+  --border: oklch(0.9 0.005 240); /* #d1d5db - Light borders */
+  --input: oklch(1 0 0); /* #ffffff - White input backgrounds */
+  --ring: oklch(0.55 0.25 260 / 0.3); /* #6366f1 with opacity - Focus ring */
+  --chart-1: oklch(0.55 0.25 260); /* #6366f1 - Chart colors */
+  --chart-2: oklch(0.55 0.22 25); /* #dc2626 - Chart colors */
+  --chart-3: oklch(0.65 0.25 85); /* #f59e0b - Chart colors */
+  --chart-4: oklch(0.7 0.25 145); /* #4ade80 - Chart colors */
+  --chart-5: oklch(0.6 0.25 250); /* #3b82f6 - Chart colors */
+  --radius: 0.75rem; /* Increased border radius for modern look */
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.25 0.015 240);
+  --sidebar-primary: oklch(0.55 0.25 260);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.55 0.22 25);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.9 0.005 240);
+  --sidebar-ring: oklch(0.55 0.25 260 / 0.3);
+}
+
+.dark {
+  --background: oklch(0.08 0.015 240);
+  --foreground: oklch(0.95 0.005 240);
+  --card: oklch(0.12 0.015 240);
+  --card-foreground: oklch(0.95 0.005 240);
+  --popover: oklch(0.12 0.015 240);
+  --popover-foreground: oklch(0.95 0.005 240);
+  --primary: oklch(0.65 0.25 260);
+  --primary-foreground: oklch(0.08 0.015 240);
+  --secondary: oklch(0.65 0.22 25);
+  --secondary-foreground: oklch(0.08 0.015 240);
+  --muted: oklch(0.15 0.015 240);
+  --muted-foreground: oklch(0.65 0.015 240);
+  --accent: oklch(0.65 0.22 25);
+  --accent-foreground: oklch(0.08 0.015 240);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.95 0.005 240);
+  --border: oklch(0.2 0.015 240);
+  --input: oklch(0.15 0.015 240);
+  --ring: oklch(0.65 0.25 260 / 0.3);
+  --chart-1: oklch(0.65 0.25 260);
+  --chart-2: oklch(0.65 0.22 25);
+  --chart-3: oklch(0.75 0.25 85);
+  --chart-4: oklch(0.8 0.25 145);
+  --chart-5: oklch(0.7 0.25 250);
+  --sidebar: oklch(0.12 0.015 240);
+  --sidebar-foreground: oklch(0.95 0.005 240);
+  --sidebar-primary: oklch(0.65 0.25 260);
+  --sidebar-primary-foreground: oklch(0.08 0.015 240);
+  --sidebar-accent: oklch(0.65 0.22 25);
+  --sidebar-accent-foreground: oklch(0.08 0.015 240);
+  --sidebar-border: oklch(0.2 0.015 240);
+  --sidebar-ring: oklch(0.65 0.25 260 / 0.3);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Added custom animations for game show excitement */
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  70% {
+    transform: scale(0.9) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
+  }
+}
+
+@keyframes flip-card {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(-90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-flip-card {
+  animation: flip-card 0.6s ease-in-out;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
